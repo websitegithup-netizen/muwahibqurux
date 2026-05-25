@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="so">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mushtaaq VIP Love ❤️</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Dancing+Script:wght@700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #ff4fa3, #7b2ff7, #00c6ff);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      min-height: 100vh;
+      overflow-x: hidden;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: white;
+      text-align: center;
+      position: relative;
+      padding: 85px 20px 40px 20px;
+    }
+
+    @keyframes gradientBG {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    /* Glassmorphism Styles */
+    .glass-panel {
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(25px);
+      -webkit-backdrop-filter: blur(25px);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 30px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+    }
+
+    .nav-bar {
+      position: fixed;
+      top: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
+      z-index: 1000;
+      padding: 8px 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: 95%;
+    }
+
+    .nav-bar button {
+      background: rgba(255, 255, 255, 0.15);
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 10px 18px;
+      border-radius: 25px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .nav-bar button:hover,
+    .nav-bar button.active {
+      background: white;
+      color: #ff1493;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(255, 20, 147, 0.3);
+      border-color: white;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 600px;
+      padding: 35px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      animation: slideUp 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      background: linear-gradient(to right, #ffffff, #ffe4ef, #ffffff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: 1px;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: white;
+    }
+
+    p {
+      font-size: 1.15rem;
+      line-height: 1.7;
+      margin-bottom: 20px;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.95);
+    }
+
+    .profile-img {
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid rgba(255, 255, 255, 0.85);
+      margin-bottom: 20px;
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+      transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .profile-img:hover {
+      transform: rotate(5deg) scale(1.06);
+      border-color: white;
+    }
+
+    .action-btn {
+      background: linear-gradient(135deg, #ff1493, #ff4fa3);
+      color: white;
+      border: none;
+      padding: 12px 28px;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 10px 25px rgba(255, 20, 147, 0.35);
+      margin: 6px;
+    }
+
+    .action-btn:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 15px 30px rgba(255, 20, 147, 0.5);
+      background: linear-gradient(135deg, #ff4fa3, #ff1493);
+    }
+
+    .action-btn-secondary {
+      background: rgba(255, 255, 255, 0.15);
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 10px 20px;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin: 6px;
+    }
+
+    .action-btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.25);
+      transform: translateY(-2px);
+      border-color: white;
+    }
+
+    /* Responsive Grid for 7 images */
+    .gallery-grid img {
+      width: 100%;
+      height: 150px;
+      border-radius: 20px;
+      object-fit: cover;
+      border: 3px solid rgba(255, 255, 255, 0.4);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      cursor: pointer;
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.07) translateY(-3px);
+      border-color: white;
+      box-shadow: 0 15px 30px rgba(255, 20, 147, 0.45);
+    }
+
+    .hidden-message {
+      margin-top: 25px;
+      display: none;
+      font-size: 1.15rem;
+      padding: 22px;
+      border-radius: 20px;
+      background: rgba(255, 20, 147, 0.2);
+      border: 1px solid rgba(255, 20, 147, 0.3);
+      animation: fadeIn 1s ease;
+      line-height: 1.8;
+    }
+
+    #specialText {
+      display: none;
+      margin-top: 25px;
+      padding: 22px;
+      border-radius: 20px;
+      background: rgba(255, 215, 0, 0.15);
+      border: 1px solid rgba(255, 215, 0, 0.35);
+      font-size: 1.15rem;
+      line-height: 1.8;
+      animation: fadeIn 1.5s ease;
+    }
+
+    /* Floating elements styles */
+    .heart {
+      position: absolute;
+      color: #fff;
+      font-size: 20px;
+      pointer-events: none;
+      animation: float 6s linear infinite;
+      opacity: 0.7;
+      z-index: 1;
+    }
+
+    .particle {
+      position: absolute;
+      pointer-events: none;
+      z-index: 1;
+      animation: particleFade 3s ease forwards;
+    }
+
+    @keyframes particleFade {
+      0% {
+        transform: scale(0.5);
+        opacity: 0;
+      }
+
+      10% {
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateY(-60px) scale(1.2);
+        opacity: 0;
+      }
+    }
+
+    @keyframes float {
+      from {
+        transform: translateY(105vh);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateY(-10vh);
+        opacity: 0.8;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Persistent Info Box (Countdown + Typewriter) */
+    .persistent-box {
+      width: 100%;
+      max-width: 600px;
+      padding: 25px;
+      margin-top: 5px;
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 10;
+    }
+
+    #countdown {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
+      color: #fff;
+      text-shadow: 0 2px 10px rgba(255, 20, 147, 0.3);
+    }
+
+    #typewriter {
+      font-size: 1.15rem;
+      min-height: 35px;
+      color: #ffe4ef;
+      font-style: italic;
+      font-weight: 300;
+    }
+
+    #loveLetter {
+      display: none;
+      margin-top: 25px;
+      padding: 25px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      line-height: 1.9;
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.6rem;
+      color: #fff;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+      animation: fadeIn 2s cubic-bezier(0.165, 0.84, 0.44, 1);
+      text-align: left;
+    }
+
+    /* Video Player styles */
+    .music-box {
+      width: 100%;
+      max-width: 600px;
+      padding: 25px;
+      margin-top: 5px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .video-selector-bar {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+      width: 100%;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .video-tab {
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 8px 16px;
+      border-radius: 15px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      flex: 1;
+      min-width: 120px;
+    }
+
+    .video-tab:hover,
+    .video-tab.active {
+      background: linear-gradient(135deg, #ff1493, #ff4fa3);
+      color: white;
+      border-color: transparent;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(255, 20, 147, 0.35);
+    }
+
+    video {
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      background: black;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation menu -->
+  <div class="nav-bar glass-panel">
+    <button id="btn-home" class="active" onclick="showPage('home')">Home ❤️</button>
+    <button id="btn-gallery" onclick="showPage('gallery')">Gallery 📸</button>
+    <button id="btn-story" onclick="showPage('story')">Our Story 💞</button>
+    <button id="btn-future" onclick="showPage('future')">Future ✨</button>
+  </div>
+
+  <!-- Home Page Container -->
+  <div class="container glass-panel" id="home">
+    <img class="profile-img" src="6.png" alt="Mushtaaq Portrait" />
+    <h1>Mushtaaq ❤️</h1>
+    <div
+      style="margin-bottom: 20px; font-size: 0.9rem; letter-spacing: 4px; color: #ffe4ef; font-weight: 800; text-transform: uppercase;">
+      ✨ VIP LOVE EXPERIENCE ✨
+    </div>
+    <p>
+      Waxaad tahay qofka ugu qaalisan noloshayda ❤️<br>
+      Markasta waxaad qalbigayga ku leedahay meel gaar ah.
+    </p>
+
+    <div>
+      <button class="action-btn" onclick="showMessage()">Taabo Halkan ❤️</button>
+    </div>
+
+    <div style="margin-top: 25px; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
+      <button class="action-btn-secondary" onclick="showLoveRain()">Love Rain 💖</button>
+      <button class="action-btn-secondary" onclick="showStars()">Magic Stars ✨</button>
+      <button class="action-btn-secondary" onclick="playSpecial()">Special Message 💌</button>
+    </div>
+
+    <div class="hidden-message" id="message">
+      Weligay kuma iloobi doono Mushtaaq 💖<br>
+      Adiga ayaa qalbigayga iftiimiyay ✨<br><br>
+      <span style="font-family: 'Dancing Script', cursive; font-size: 1.8rem; font-weight: bold;">“Every moment with you
+        feels magical ❤️”</span>
+    </div>
+
+    <div id="specialText">
+      🌹 Mushtaaq, waxaad tahay farxaddayda,
+      iftiinka maalinteyda, iyo jacaylka qalbigayga ❤️
+    </div>
+  </div>
+
+  <!-- Gallery Page Container (Responsive 7-Photo grid) -->
+  <div class="container glass-panel" id="gallery" style="display:none;">
+    <h1>Beautiful Mushtaaq 📸</h1>
+    <p>Every picture of you is my favorite memory ❤️</p>
+
+    <div class="gallery-grid"
+      style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 15px; margin-top: 25px;">
+      <img src="6.png" alt="Mushtaaq Portrait" onclick="openLightbox('6.png')" />
+      <img src="1.jpg" alt="Mushtaaq Photo 1" onclick="openLightbox('1.jpg')" />
+      <img src="2.jpg" alt="Mushtaaq Photo 2" onclick="openLightbox('2.jpg')" />
+      <img src="3.jpg" alt="Mushtaaq Photo 3" onclick="openLightbox('3.jpg')" />
+      <img src="4.jpg" alt="Mushtaaq Photo 4" onclick="openLightbox('4.jpg')" />
+      <img src="5.jpg" alt="Mushtaaq Photo 5" onclick="openLightbox('5.jpg')" />
+      <img src="7.jpg" alt="Mushtaaq Photo 7" onclick="openLightbox('7.jpg')" />
+    </div>
+  </div>
+
+  <!-- Story Page Container -->
+  <div class="container glass-panel" id="story" style="display:none;">
+    <h1>Our Love Story 💞</h1>
+    <p>
+      The day I met you, my world changed forever ❤️<br><br>
+      Every conversation became special.<br>
+      Every smile from you became my happiness ✨
+    </p>
+
+    <div
+      style="margin-top: 25px; font-family: 'Dancing Script', cursive; font-size: 1.8rem; line-height: 1.8; color: #ffe4ef; text-shadow: 0 1px 3px rgba(0,0,0,0.15);">
+      🌹 You are my peace<br>
+      🌙 My dream girl<br>
+      ❤️ My forever person
+    </div>
+  </div>
+
+  <!-- Future Page Container -->
+  <div class="container glass-panel" id="future" style="display:none;">
+    <h1>Future Together ✨</h1>
+    <p>
+      I dream about traveling with you 🌍<br>
+      Laughing with you 😊<br>
+      Building memories together 💖<br><br>
+      One day, this love story will become forever ❤️
+    </p>
+
+    <div style="margin-top: 25px; font-size: 3.5rem;">
+      💍 ❤️ ✨
+    </div>
+  </div>
+
+  <!-- Persistent Info Box (Countdown + Typewriter + Love Letter Button) -->
+  <div class="persistent-box glass-panel">
+    <div id="countdown"></div>
+    <div id="typewriter"></div>
+
+    <div style="margin-top: 15px;">
+      <button class="action-btn" onclick="openLoveLetter()">Open Love Letter 💌</button>
+    </div>
+
+    <div id="loveLetter">
+      My dearest Mushtaaq ❤️<br><br>
+      Every heartbeat reminds me of you.<br>
+      Every smile I have begins with your name.<br>
+      If love had a face, it would look like you 💖
+    </div>
+  </div>
+
+  <!-- Custom Video Music Player (Interactive tabs for 3 videos) -->
+  <div class="music-box glass-panel">
+    <h2>Special Videos For You 🎥</h2>
+    <p style="font-size: 0.95rem; opacity: 0.85; margin-bottom: 15px;">Daawo muuqaalada gaarka ah ee laguu diyaariyey ❤️
+    </p>
+
+    <div
+      style="width: 100%; border-radius: 16px; overflow: hidden; border: 2px solid rgba(255,255,255,0.22); box-shadow: 0 8px 30px rgba(0,0,0,0.3);">
+      <video id="romantic-video" width="100%" height="auto" controls poster="6.png"
+        style="display: block; outline: none;">
+        <source src="8.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <!-- Video selector navigation tabs -->
+    <div class="video-selector-bar">
+      <button id="vid-btn-1" class="video-tab active" onclick="switchVideo('8.mp4', 1)">Muuqaalka 1aad 🎬</button>
+      <button id="vid-btn-2" class="video-tab" onclick="switchVideo('9.mp4', 2)">Muuqaalka 2aad 🎬</button>
+      <button id="vid-btn-3" class="video-tab" onclick="switchVideo('10.mp4', 3)">Muuqaalka 3aad 🎬</button>
+    </div>
+  </div>
+
+  <!-- Romantic Song Player (YouTube Embed) -->
+  <div class="music-box glass-panel" style="margin-top: 5px; margin-bottom: 20px;">
+    <h2>Romantic Background Music 🎶</h2>
+    <p style="font-size: 0.95rem; opacity: 0.85; margin-bottom: 15px;">Mustafe Kante - Macaan Waan Baqbaqayaayee ❤️</p>
+
+    <div
+      style="width: 100%; border-radius: 16px; overflow: hidden; border: 2px solid rgba(255,255,255,0.22); box-shadow: 0 8px 30px rgba(0,0,0,0.3);">
+      <iframe width="100%" height="220"
+        src="https://www.youtube.com/embed/CihQxjNaTBU?autoplay=1&loop=1&playlist=CihQxjNaTBU" title="Romantic Music"
+        frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="display: block;">
+      </iframe>
+    </div>
+  </div>
+
+  <!-- Lightbox Full Screen Modal -->
+  <div id="lightbox" onclick="closeLightbox()"
+    style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.88); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); z-index: 2000; justify-content: center; align-items: center; cursor: pointer; animation: fadeIn 0.4s ease;">
+    <img id="lightbox-img" src="" alt="Full Screen Picture"
+      style="max-width: 90%; max-height: 85%; border-radius: 20px; border: 4px solid rgba(255,255,255,0.85); box-shadow: 0 25px 60px rgba(0,0,0,0.5); transform: scale(0.95); transition: transform 0.3s ease;">
+  </div>
+
+  <!-- Footer -->
+  <div
+    style="margin-top: 20px; margin-bottom: 25px; text-align:center; font-size:0.9rem; color:white; opacity:0.8; letter-spacing:2px; font-weight: 600;">
+    Created With Endless Love 💎❤️
+  </div>
+
+  <!-- Script placed at the bottom so that elements are fully loaded first -->
+  <script>
+    function showPage(pageId) {
+      // Hide all page containers
+      document.querySelectorAll('.container').forEach(page => {
+        page.style.display = 'none';
+      });
+
+      // Show the targeted page container
+      const targetPage = document.getElementById(pageId);
+      if (targetPage) {
+        targetPage.style.display = 'block';
+      }
+
+      // Update the active state in nav-bar buttons
+      document.querySelectorAll('.nav-bar button').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      const activeBtn = document.getElementById('btn-' + pageId);
+      if (activeBtn) {
+        activeBtn.classList.add('active');
+      }
+    }
+
+    function showMessage() {
+      const msg = document.getElementById('message');
+      if (msg) {
+        msg.style.display = 'block';
+        msg.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    function playSpecial() {
+      const spec = document.getElementById('specialText');
+      if (spec) {
+        spec.style.display = 'block';
+        spec.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    // Video Switcher Tab function
+    function switchVideo(videoSrc, tabNum) {
+      const video = document.getElementById('romantic-video');
+      if (video) {
+        video.pause();
+        video.src = videoSrc;
+        video.load();
+        video.play().catch(err => {
+          console.log("Autoplay blocked or click interaction required: ", err);
+        });
+      }
+
+      // Update active state class on video tab buttons
+      document.querySelectorAll('.video-tab').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      const activeBtn = document.getElementById('vid-btn-' + tabNum);
+      if (activeBtn) {
+        activeBtn.classList.add('active');
+      }
+    }
+
+    // Lightbox open and close functions
+    function openLightbox(imgSrc) {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      if (lightbox && lightboxImg) {
+        lightboxImg.src = imgSrc;
+        lightbox.style.display = 'flex';
+        setTimeout(() => {
+          lightboxImg.style.transform = 'scale(1)';
+        }, 50);
+      }
+    }
+
+    function closeLightbox() {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      if (lightbox && lightboxImg) {
+        lightboxImg.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+          lightbox.style.display = 'none';
+        }, 150);
+      }
+    }
+
+    // Hearts Animation
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.innerHTML = '❤️';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.fontSize = Math.random() * 20 + 15 + 'px';
+      heart.style.animationDuration = Math.random() * 3 + 3 + 's';
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 6000);
+    }
+
+    setInterval(createHeart, 450);
+
+    // Love Rain Effect
+    function showLoveRain() {
+      for (let i = 0; i < 40; i++) {
+        const love = document.createElement('div');
+        love.classList.add('particle');
+        love.innerHTML = '💖';
+        love.style.position = 'absolute';
+        love.style.left = Math.random() * 100 + 'vw';
+        love.style.top = (window.scrollY + Math.random() * 100 - 50) + 'px';
+        love.style.fontSize = Math.random() * 20 + 15 + 'px';
+        love.style.animation = 'float 5s linear';
+        document.body.appendChild(love);
+
+        setTimeout(() => love.remove(), 5000);
+      }
+    }
+
+    // Stars effect
+    function showStars() {
+      for (let i = 0; i < 30; i++) {
+        const star = document.createElement('div');
+        star.classList.add('particle');
+        star.innerHTML = '✨';
+        star.style.position = 'absolute';
+        star.style.left = Math.random() * 100 + 'vw';
+        star.style.top = (window.scrollY + Math.random() * window.innerHeight) + 'px';
+        star.style.fontSize = Math.random() * 20 + 10 + 'px';
+        document.body.appendChild(star);
+
+        setTimeout(() => {
+          star.remove();
+        }, 3000);
+      }
+    }
+
+    // Fireworks effect
+    function createFirework() {
+      const firework = document.createElement('div');
+      firework.classList.add('particle');
+      firework.innerHTML = '🎆';
+      firework.style.position = 'absolute';
+      firework.style.left = Math.random() * 100 + 'vw';
+      firework.style.top = (window.scrollY + Math.random() * (window.innerHeight - 100)) + 'px';
+      firework.style.fontSize = Math.random() * 30 + 20 + 'px';
+      document.body.appendChild(firework);
+
+      setTimeout(() => {
+        firework.remove();
+      }, 2000);
+    }
+
+    for (let i = 0; i < 30; i++) {
+      setTimeout(createFirework, i * 150);
+    }
+
+    // Countdown Timer
+    const countdown = document.getElementById('countdown');
+    const startDate = new Date('2025-01-01');
+
+    function updateCountdown() {
+      const now = new Date();
+      const diff = now - startDate;
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      if (countdown) {
+        countdown.innerHTML = '❤️ Loving You For ' + days + ' Days ❤️';
+      }
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // Typewriter Effect
+    const text = 'You are my forever happiness Mushtaaq ❤️';
+    let index = 0;
+
+    function typeWriter() {
+      const typewriterElement = document.getElementById('typewriter');
+      if (typewriterElement && index < text.length) {
+        typewriterElement.innerHTML += text.charAt(index);
+        index++;
+        setTimeout(typeWriter, 80);
+      }
+    }
+
+    typeWriter();
+
+    // Open Love Letter
+    function openLoveLetter() {
+      const letter = document.getElementById('loveLetter');
+      if (letter) {
+        letter.style.display = 'block';
+        letter.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    // Background sparkles
+    function createSparkle() {
+      const sparkle = document.createElement('div');
+      sparkle.innerHTML = '💎';
+      sparkle.style.position = 'absolute';
+      sparkle.style.left = Math.random() * 100 + 'vw';
+      sparkle.style.top = (window.scrollY + Math.random() * window.innerHeight) + 'px';
+      sparkle.style.fontSize = '18px';
+      sparkle.style.opacity = '0.8';
+      sparkle.style.animation = 'fadeIn 3s ease';
+      document.body.appendChild(sparkle);
+
+      setTimeout(() => sparkle.remove(), 3000);
+    }
+
+    setInterval(createSparkle, 800);
+  </script>
+</body>
+
+</html>
